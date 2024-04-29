@@ -14,13 +14,15 @@
     <!-- Replace the "test" client-id value with your client-id -->
     <script src="https://www.paypal.com/sdk/js?client-id=Abzi6pQwMFk58jmNDHJLK1MNgVMxJaYLc-6SDBxmyopSOgYtZOHP_GLy1VTJX4gWa-EHb5obVWJRkz3g&currency=USD"></script>
     <script src="app.js"></script>
-      paypal.Buttons({
+    <script> 
+    paypal.Buttons({
 
             style: {
                 color:  'blue',
                 shape:  'pill',
                 label:  'pay',
                 height: 40
-            })
-  </body>
+            }).render('#paypal-button-container');
+    </script>
+    </body>
 </html>

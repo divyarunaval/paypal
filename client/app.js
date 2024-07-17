@@ -6,6 +6,30 @@ window.paypal
                 label:  'pay',
                 height: 40
             },   
+ function onGooglePayLoaded() {
+  const paymentsClient = getGooglePaymentsClient();
+  paymentsClient.isReadyToPay(isReadyToPayRequest)
+      .then(function(response) {
+        if (response.result) {
+          addGooglePayButton();
+        }
+      })
+      .catch(function(err) {
+        console.error(err);
+      });
+}
+/**
+ * Add a Google Pay purchase button
+ */
+function addGooglePayButton() {
+  const paymentsClient = getGooglePaymentsClient();
+  const button =
+      paymentsClient.createButton({
+        onClick: onGooglePaymentButtonClicked /* To be defined later */,
+        allowedPaymentMethods: [baseCardPaymentMethod]
+      });
+  document.getElementById('container').appendChild(button);
+},
     
     async createOrder() {
       try {

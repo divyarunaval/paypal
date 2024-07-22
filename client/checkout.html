@@ -9,10 +9,20 @@
      <h1>Product Checkout</h1>
     <p>Review and Pay for <strong>Bamboo Pen Stand</strong></p>
     <p><strong>Price:</strong> $110</p>
-    <div id="paypal-button-container"></div>
+     <label>
+      <input
+        id="bancontact-radio"
+        value="bancontact"
+        name="payment-option"
+        type="radio"
+      />
+      <span id="bancontact-mark"></span>
+    </label>
+
+    <div id="bancontact-container"></div>
+    <div id="bancontact-btn"></div>
     <p id="result-message"></p>
-    <script src="https://pay.google.com/gp/p/js/pay.js"></script>
-   
+       
     <!-- Replace the "test" client-id value with your client-id -->
     <script src="https://www.paypal.com/sdk/js?client-id=AW5tTKxUMe32m2738i_-g0zzGtVihgcycHve5elMLxfcMxX0y8D5G6xWKxomI_SHpyNpYqiI2DVwBLum&components=buttons,payment-fields,marks,funding-eligibility&enable-funding=bancontact&currency=EUR"></script>
     <script src="app.js"></script>

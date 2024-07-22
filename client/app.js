@@ -52,7 +52,7 @@ paypal.PaymentFields({
     label: "pay",
   },
   createOrder() {
-    return fetch("/my-server/create-paypal-order", {
+    return fetch("/server/createOrder", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -72,7 +72,7 @@ paypal.PaymentFields({
     .then((order) => order.id);
   },
   onApprove(data) {
-    return fetch("/my-server/capture-paypal-order", {
+    return fetch("/server/captureOrder", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
